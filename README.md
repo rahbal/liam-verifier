@@ -8,7 +8,8 @@ Make sure you have [Go](http://golang.org/doc/install) version 1.17 or newer and
 ```sh
 git clone https://github.com/heroku/go-getting-started.git
 cd go-getting-started
-go build -o bin/go-getting-started -v . # or `go build -o bin/go-getting-started.exe -v .` in git bash
+go build -o bin/go-getting-started -v .
+# or `go build -o bin/go-getting-started.exe -v .` in git bash
 heroku local
 ```
 
