@@ -1,0 +1,5 @@
+.env
+.docker_build/
+.vscode/
+bin/
+vendor/
