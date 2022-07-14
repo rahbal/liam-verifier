@@ -25,5 +25,7 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
+	// router.POST("/result", B.verifier())
+
 	router.Run(":" + port)
 }
