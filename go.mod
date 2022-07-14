@@ -1,4 +1,4 @@
-module github.com/heroku/go-getting-started
+module github.com/rahbal/liam-verifier
 
 // +heroku goVersion go1.17
 go 1.17
