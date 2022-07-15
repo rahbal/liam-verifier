@@ -1,13 +1,14 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"os"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
+
+	"github.com/heroku/go-getting-started/code"
 )
 
 func main() {
@@ -31,10 +32,11 @@ func main() {
 	router.POST("/result", func(c *gin.Context) {
 
 		message := c.PostForm("msg")
-		fmt.Print(message)
+
+		result := code.Verifier(message)
 
 		c.HTML(http.StatusOK, "result.tmpl.html", gin.H{
-			"message": message,
+			"message": result,
 		})
 
 	})

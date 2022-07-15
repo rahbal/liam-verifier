@@ -1,6 +1,6 @@
 {
-  "name": "Start on Heroku: Go",
-  "description": "Go Getting Started Example App",
+  "name": "liam verifier",
+  "description": "a golang Liam Verifier",
   "keywords": [
     "getting-started",
     "go",

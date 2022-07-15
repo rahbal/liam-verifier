@@ -2,15 +2,14 @@ package code
 
 import (
 	"fmt"
-	"net/http"
 
-	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
 )
 
-func Verifier(c *gin.Context) {
-	fmt.Print("in verifier")
+func Verifier(mail_string string) string {
 
-	c.HTML(http.StatusOK, "result.tmpl.html", nil)
+	fmt.Print(mail_string)
+
+	return mail_string
 
 }
