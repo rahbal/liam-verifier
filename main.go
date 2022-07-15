@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -16,6 +17,8 @@ func main() {
 		log.Fatal("$PORT must be set")
 	}
 
+	// code.Verifier() // function name need to be Capital to export
+
 	router := gin.New()
 	router.Use(gin.Logger())
 	router.LoadHTMLGlob("templates/*.tmpl.html")
@@ -25,7 +28,16 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
-	// router.POST("/result", B.verifier())
+	router.POST("/result", func(c *gin.Context) {
+
+		message := c.PostForm("msg")
+		fmt.Print(message)
+
+		c.HTML(http.StatusOK, "result.tmpl.html", gin.H{
+			"message": message,
+		})
+
+	})
 
 	router.Run(":" + port)
 }
