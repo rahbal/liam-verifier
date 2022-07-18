@@ -13,6 +13,8 @@ import (
 
 func main() {
 	port := os.Getenv("PORT")
+	result := code.Email_result{}
+	var err error
 
 	if port == "" {
 		log.Fatal("$PORT must be set")
@@ -31,12 +33,20 @@ func main() {
 
 	router.POST("/result", func(c *gin.Context) {
 
-		message := c.PostForm("msg")
+		emails := c.PostForm("emails")
 
-		result := code.Verifier(message)
+		result, err = code.Verifier(emails)
+		// log.Output(1, message+":"+err.Error())
+
+		// fmt.Println("main went ahead")
+
+		if err != nil {
+			return
+		}
 
 		c.HTML(http.StatusOK, "result.tmpl.html", gin.H{
-			"message": result,
+			"mx_records": result.Mx_slice,
+			"email":      result.Email_add,
 		})
 
 	})

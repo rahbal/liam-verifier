@@ -9,22 +9,44 @@
       <a href="/" class="lang-logo">
         <img src="/static/lang-logo.png">
       </a>
-      <h1>Liam</h1>
-      <p>a free golang based Email Address Verifier</p>
-
-      <form action="/result" method="post" class="form-inline">
-        <div class="form-group mb-2">
-          <input type="text" name="msg" class="form-control" placeholder="enter email address">
-        </div>
-        <button type="submit" value="submit" class="btn btn-primary mb-2">Submit</button>
-      </form>
+      <h2>Liam</h2>
+      <p>Bulk Email Address Verifier</p>
 
     </div>
   </div>
   <div class="container">
-    <div class="alert alert-info text-center" role="alert">
-      Looking for a specific feature, please open an issue on the Github repo.
-    </div>
+
+    <form action="/result" method="post" class="form-inline text-center">
+      <div class="form-group mb-2 mr-sm-auto">
+        <!-- <input rows="3" type="textarea" name="msg" class="form-control input-lg" placeholder="enter email address"> -->
+        <textarea cols="50" rows="3" name="emails" class="form-control input-lg" placeholder="Enter email addresses"></textarea>
+      </div>
+
+      <div class="form-check form-check-inline mb-2 mr-sm-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioComma">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Comma
+        </label>
+      </div>
+      <div class="form-check form-check-inline mb-2 mr-sm-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioSemiColon" checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Semi-colon
+        </label>
+      </div>
+      <div class="form-check form-check-inline mb-2 mr-sm-auto">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioNewline" checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Newline
+        </label>
+      </div>
+
+      <button type="submit" value="submit" class="btn btn-primary mb-2">Submit</button>
+    </form>
+
+
+
+
     <hr>
     <div class="row">
       <div class="col-md-6">
@@ -40,10 +62,9 @@
         </ul>
       </div>
     </div> <!-- row -->
+    
     <div class="alert alert-info text-center" role="alert">
-      Please do work through the Getting Started guide, even if you do know how to build such an application. The guide
-      covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to
-      build and deploy your own apps.
+      Looking for a specific feature, create an issue on Github.
     </div>
   </div>
 
